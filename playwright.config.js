@@ -26,7 +26,7 @@ export default defineConfig({
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    baseURL: 'https://bigsale-five.vercel.app/',
+    baseURL: 'https://bigsale-mu.vercel.app/',
     headless: false,                   // change to true on CI
     viewport: { width: 1280, height: 720 },
     screenshot: 'only-on-failure',
@@ -36,10 +36,30 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+  // 1️⃣ Setup Project (Login Once)
+  {
+    name: 'setup',
+    testMatch: /auth\.setup\.spec\.js/,
+    use: {
+      headless: true, // optional (hide login window)
     },
+  },
+
+  // 2️⃣ Authenticated Tests
+  {
+    name: 'chromium-auth',
+    testMatch: /.*\.auth\.spec\.js/,
+    use: {
+      storageState: 'storageState.json',
+    },
+    dependencies: ['setup'],
+  },
+
+  // 3️⃣ Public Tests (No Login)
+  {
+    name: 'chromium-public',
+    testMatch: /.*\.public\.spec\.js/,
+  },
 
     // {
     //   name: 'firefox',
@@ -78,5 +98,7 @@ export default defineConfig({
   //   url: 'http://localhost:3000',
   //   reuseExistingServer: !process.env.CI,
   // },
+
+  
 });
 
