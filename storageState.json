@@ -1,0 +1,25 @@
+{
+  "cookies": [
+    {
+      "name": "token",
+      "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2Rhc2hib2FyZC5sdXhlYjJiLmNvbS9hcGkvbG9naW4iLCJpYXQiOjE3NzI2MTU0MjEsImV4cCI6MTc3NTIwNzQyMSwibmJmIjoxNzcyNjE1NDIxLCJqdGkiOiJ5bmtKeEtZdmtaSzZnaG5hIiwic3ViIjoiMTAiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.mKWeX-o8JUM_GM1dxiVA8nZrkrq1xtKZRx3FJkKtX3s",
+      "domain": "bigsale-mu.vercel.app",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "user",
+      "value": "%7B%22id%22%3A10%2C%22name%22%3A%22Chloe%20Charles%22%2C%22email%22%3A%2263oasietoq%40bwmyga.com%22%2C%22role%22%3A%22user%22%7D",
+      "domain": "bigsale-mu.vercel.app",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": []
+}
